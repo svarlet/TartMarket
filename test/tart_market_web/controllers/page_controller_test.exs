@@ -13,4 +13,13 @@ defmodule TartMarketWeb.PageControllerTest do
       |> html_response(200)
     end
   end
+
+  describe "home page" do
+    test "has a sign up button", %{conn: conn} do
+      assert conn
+      |> get("/")
+      |> html_response(200)
+      =~ ~S{<a class="btn btn-default" href="#" role="button">Sign up</a>}
+    end
+  end
 end
