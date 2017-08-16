@@ -13,6 +13,13 @@ defmodule TartMarketWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/auth", TartMarketWeb do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+  end
+
   scope "/", TartMarketWeb do
     pipe_through :browser # Use the default browser stack
 
