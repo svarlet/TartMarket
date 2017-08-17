@@ -18,7 +18,7 @@ defmodule TartMarketWeb.AuthController do
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     conn
-    |> put_flash(:info, auth)
+    |> put_flash(:info, inspect auth)
     |> redirect(to: "/")
     # case UserFromAuth.find_or_create(auth) do
     #   {:ok, user} ->
