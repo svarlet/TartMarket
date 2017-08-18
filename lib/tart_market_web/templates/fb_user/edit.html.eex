@@ -1,0 +1,5 @@
+<h2>Edit Fb user</h2>
+
+<%= render "form.html", Map.put(assigns, :action, fb_user_path(@conn, :update, @fb_user)) %>
+
+<span><%= link "Back", to: fb_user_path(@conn, :index) %></span>

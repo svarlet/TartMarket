@@ -26,7 +26,7 @@ defmodule TartMarketWeb.Router do
     get "/", PageController, :index
     get "/aboutus", PageController, :aboutus
 
-    resources "/users", UserController
+    resources "/fb_users", FbUserController
   end
 
   # Other scopes may use custom stacks.

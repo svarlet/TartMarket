@@ -1,0 +1,40 @@
+<h2>Listing Fb users</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Fbid</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Link</th>
+      <th>Image</th>
+      <th>Access token</th>
+      <th>Access token expires at</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for fb_user <- @fb_users do %>
+    <tr>
+      <td><%= fb_user.name %></td>
+      <td><%= fb_user.fbid %></td>
+      <td><%= fb_user.email %></td>
+      <td><%= fb_user.gender %></td>
+      <td><%= fb_user.link %></td>
+      <td><%= fb_user.image %></td>
+      <td><%= fb_user.access_token %></td>
+      <td><%= fb_user.access_token_expires_at %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: fb_user_path(@conn, :show, fb_user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: fb_user_path(@conn, :edit, fb_user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: fb_user_path(@conn, :delete, fb_user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Fb user", to: fb_user_path(@conn, :new) %></span>

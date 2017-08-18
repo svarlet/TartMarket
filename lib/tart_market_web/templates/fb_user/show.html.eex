@@ -1,0 +1,48 @@
+<h2>Show Fb user</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @fb_user.name %>
+  </li>
+
+  <li>
+    <strong>Fbid:</strong>
+    <%= @fb_user.fbid %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @fb_user.email %>
+  </li>
+
+  <li>
+    <strong>Gender:</strong>
+    <%= @fb_user.gender %>
+  </li>
+
+  <li>
+    <strong>Link:</strong>
+    <%= @fb_user.link %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @fb_user.image %>
+  </li>
+
+  <li>
+    <strong>Access token:</strong>
+    <%= @fb_user.access_token %>
+  </li>
+
+  <li>
+    <strong>Access token expires at:</strong>
+    <%= @fb_user.access_token_expires_at %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: fb_user_path(@conn, :edit, @fb_user) %></span>
+<span><%= link "Back", to: fb_user_path(@conn, :index) %></span>
